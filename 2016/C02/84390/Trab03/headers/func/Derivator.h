@@ -1,0 +1,1 @@
+../../labs/ex52/Derivator.h

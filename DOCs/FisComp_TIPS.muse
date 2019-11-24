@@ -1,0 +1,31 @@
+#title Fis Computacional TIPS
+#author F Barao
+#date 16 Nov 2014
+
+* libraries and executables
+  - generate object code: g++ -c *.C
+  - creating a static lib: 
+    - ar ruv libFC<groupname>.a *.o
+    - ranlib libFC<groupname>.a 
+  - creating an executable: g++ -o main.exe main.C -I src -L lib -l FC<groupname>
+
+* svn management
+  - go somewhere in your computer and download the FC project
+  - the first time you need to make a check out of the project FC existing on server
+    - svn co --username=<groupname> svn://fcomp.tecnico.ulisboa.pt/FC  
+  - you have created the following directories:
+    - FC/DOCs: documentation
+    - FC/2014/<your_groupname>
+  - you just can write in the directory with your <groupname>
+  - start by making a new directory where to put your code (*.C, *.h) and commit your code
+    - cd FC/2014/<groupname>
+    - svn mkdir src
+    - cd src 
+    - copy your *.C and *.h files you have to here
+    - add to svn: svn add *.C *.h
+    - commit your changes: **svn ci -m "some message"**
+  - Every time you start working and before doing anything just make an update of your local version
+    - svn up
+
+
+

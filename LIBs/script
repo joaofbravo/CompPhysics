@@ -1,0 +1,5 @@
+#!/bin/csh
+
+set LIBFC="FC_`uname -m`"
+echo $LIBFC 
+g++ -o Diamond.exe Diamond.C OpticalMat.C -L SVN/FC/LIBS -l${LIBFC} `root-config --cflags --libs`

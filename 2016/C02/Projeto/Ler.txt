@@ -1,0 +1,42 @@
+Bom dia professor.
+
+--------------------
+
+A estrutura de classes relativas ao projeto está organizada da seguinte forma:
+
+- Headers em headers/*/
+
+- Source codes em src/*/
+
+--------------------
+
+Programa principal "ProjetoC02.C" em src/
+
+Executável criado em execs/
+
+txt de simulações importantes em interpolateddata/
+Plots importantes em plots/
+
+--------------------
+
+"make projecto" para compilar bibliotecas, criar e correr executável ProjetoC02.exe
+
+Ficheiro que guarda simulação contém:
+"Identificação da partícula     Origem_x Origem_y Origem_z     Px Py Pz     Distância percorrida"
+
+e, na última linha, dados adicionais que ajudam a acelerar a leitura.
+
+--------------------
+
+#########################################
+Criámos ainda uma DataBase no ficheiro "constants.data" em data/, em que guardamos algumas constantes universais e outras específicas a cada elemento. Através da classe ConstantsManager, tornámos possível a adição de novos elementos de meios materiais de forma interativa. Para isso, basta fazer "Shower.SetElement("Element");" na main e, se "Element" ainda não estiver na database, basta preencher os dados pedidos no terminal, que ele ficará para sempre guardado.
+Atenção! Não é garantido que os elementos que não sejam o Alumínio tenham uma majoração perfeita.
+Garantimos pelo menos para o ferro uma taxa de 100%, já que foi objeto de testes exaustivos. No que consta ao ouro e ao Chumbo podemos garantir uma taxa de funcionamento perto de 60%. Seria necessário mexer um pouco nas majorações que estão otimizadas para o Alumínio para serem universais mas menos ótimas. Pode adicionar outros elementos a gosto :) (normalmente números atómicos próximos do 13 funcionam melhor).
+#########################################
+
+--------------------
+
+Cumprimentos,
+João Bravo, 84390
+Filipe Miguel, 84381
+C02

@@ -1,0 +1,13 @@
+F Barao (Oct 2015)
+Updates: the libFC library was updated on October 2015
+
+------------------------------------------------------------------
+
+Neste directorio encontram-se os seguintes ficheiros:
+
+cTrab1.h ::::::::: header file for class Trab1 
+cFCgraphics :::::: header file for class cFCgraphics (interface to ROOT)
+libFC_mac.a::::::: biblioteca estatica para o macOSx
+libFC_x86_32.a:::: biblioteca estatica para linux de 32 bits
+libFC_x86_64.a:::: biblioteca estatica para linux de 64 bits
+

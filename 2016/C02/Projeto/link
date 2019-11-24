@@ -1,0 +1,86 @@
+# To add new *.h/*.C:
+# - add in *_HEAD
+# - add in *_SRC
+# - add to all
+# - add new lib target
+
+TOOLS_HEAD  = ex42/FCtools.h ex56/FCrand.h
+TOOLS_SRC   = ex42/FCtools.C ex56/FCrand.C
+
+MTRX_HEAD   = ex42/Vec.h ex45/FCmatrix.h ex45/FCmatrixFull.h \
+			  ex45/FCmatrixBanded.h ex46/EqSolver.h
+MTRX_SRC    = ex42/Vec.C ex45/FCmatrix.C ex45/FCmatrixFull.C \
+			  ex45/FCmatrixBanded.C ex46/EqSolver.C
+
+INTRPL_HEAD = ex49/DataPoints.h ex49/Interpolator.h \
+			  ex49/LagrangeInterpolator.h ex49/NewtonInterpolator.h \
+			  ex49/NevilleInterpolator.h ex49/Spline3Interpolator.h
+INTRPL_SRC  = ex49/DataPoints.C ex49/Interpolator.C \
+			  ex49/LagrangeInterpolator.C ex49/NewtonInterpolator.C \
+			  ex49/NevilleInterpolator.C ex49/Spline3Interpolator.C
+
+FUNC_HEAD   = ex52/Func1D.h ex47/ZeroFinder.h ex52/Derivator.h ex52/Integrator.h \
+			  ex58/IntegratorMC.h
+FUNC_SRC    = ex52/Func1D.C ex47/ZeroFinder.C ex52/Derivator.C ex52/Integrator.C \
+			  ex58/IntegratorMC.C
+
+ODE_HEAD    = ex61/ODEpoint.h ex61/ODEsolver.h
+ODE_SRC     = ex61/ODEpoint.C ex61/ODEsolver.C
+
+OTHR_SRC    = ex42/testfctools.C ex42/testvec.C ex45/testfull.C ex45/testbanded.C \
+			  ex46/testeqsolver.C ex49/testdata.C ex49/testlagrange.C \
+			  ex49/testnewton.C ex49/testneville.C ex49/testspline3.C \
+			  ex52/testfunc1d.C ex47/testzerofinder.C ex52/testderivator.C \
+			  ex52/testintegrator.C ex58/testintegratormc.C ex56/testfcrand.C \
+			  ex61/testodepoint.C ex61/testodesolver.C
+
+CP = cp -f
+LN = ln -s -f
+RM = rm -f
+
+all:
+	@for fname in $(TOOLS_HEAD); do $(CP) ../labs/$$fname headers/tools/ ; done
+	@for fname in $(MTRX_HEAD); do $(CP) ../labs/$$fname headers/matrix/ ; done
+	@for fname in $(INTRPL_HEAD); do $(CP) ../labs/$$fname headers/interpol/ ; done
+	@for fname in $(FUNC_HEAD); do $(CP) ../labs/$$fname headers/func/ ; done
+	@for fname in $(ODE_HEAD); do $(CP) ../labs/$$fname headers/ode/ ; done
+	@for fname in $(TOOLS_SRC); do $(CP) ../labs/$$fname src/tools/ ; done
+	@for fname in $(MTRX_SRC); do $(CP) ../labs/$$fname src/matrix/ ; done
+	@for fname in $(INTRPL_SRC); do $(CP) ../labs/$$fname src/interpol/ ; done
+	@for fname in $(FUNC_SRC); do $(CP) ../labs/$$fname src/func/ ; done
+	@for fname in $(ODE_SRC); do $(CP) ../labs/$$fname src/ode/ ; done
+	@for fname in $(OTHR_SRC); do $(CP) ../labs/$$fname src/ ; done
+	@$(LN) ../../../../LIBs/cFCgraphics.h headers/
+	@$(LN) ../../../../LIBs/cFCgraphics.C src/
+
+tools:
+	@for fname in $(TOOLS_HEAD); do $(CP) ../labs/$$fname headers/tools/ ; done
+	@for fname in $(TOOLS_SRC); do $(CP) ../labs/$$fname src/tools/ ; done
+
+matrix:
+	@for fname in $(MTRX_HEAD); do $(CP) ../labs/$$fname headers/matrix/ ; done
+	@for fname in $(MTRX_SRC); do $(CP) ../labs/$$fname src/matrix/ ; done
+
+interpol:
+	@for fname in $(INTRPL_HEAD); do $(CP) ../labs/$$fname headers/interpol/ ; done
+	@for fname in $(INTRPL_SRC); do $(CP) ../labs/$$fname src/interpol/ ; done
+
+func:
+	@for fname in $(FUNC_HEAD); do $(CP) ../labs/$$fname headers/func/ ; done
+	@for fname in $(FUNC_SRC); do $(CP) ../labs/$$fname src/func/ ; done
+
+ode:
+	@for fname in $(ODE_HEAD); do $(CP) ../labs/$$fname headers/ode/ ; done
+	@for fname in $(ODE_SRC); do $(CP) ../labs/$$fname src/ode/ ; done
+
+other:
+	@for fname in $(OTHR_SRC); do $(CP) ../labs/$$fname src/ ; done
+	@$(LN) ../../../../LIBs/cFCgraphics.h headers/
+	@$(LN) ../../../../LIBs/cFCgraphics.C src/
+
+clean:
+	@echo Cleaning copies and symbollic links...
+	$(RM) headers/*.h
+	$(RM) headers/*/*.h
+	$(RM) src/*.C
+	$(RM) src/*/*.C

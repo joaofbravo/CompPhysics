@@ -1,0 +1,11 @@
+//ATTENTION!!! dont change the layout of this file!!!!
+//universal constants:
+me Re Na alpha areamassa
+0.5109989461 2.81794e-13 6.022140857e23 7.29735256635e-03 0.1535
+
+//specific constants:
+name Z A P X0 Rmech C0 a U0 U1 m
+Aluminium  13 26.9815385 2.699 24.01 44.503 -4.24 0.0802 0.1708 3.01 3.63
+Iron 26 55.845 7.874 13.84 36.663 -4.29 0.1468 -0.0012 3.15 2.96
+Gold 79 196.967 19.32 6.46 24.262 -5.57 0.0976 0.2021 3.7 3.11
+Plumbum 82 207.2 11.35 6.37 23.922 -6.2 0.0936 0.3776 3.81 3.16
